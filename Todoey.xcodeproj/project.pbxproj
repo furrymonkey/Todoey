@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1853B66722130F2100246D2C /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853B66622130F2100246D2C /* CategoryViewController.swift */; };
+		18B96C23221C6EB8008268C9 /* BoulderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B96C22221C6EB8008268C9 /* BoulderViewController.swift */; };
 		18FC9D532218753D0086DB2E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC9D522218753D0086DB2E /* Item.swift */; };
 		18FC9D55221875530086DB2E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC9D54221875530086DB2E /* Category.swift */; };
 		18FD6A0A220DE6B700865760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FD6A09220DE6B700865760 /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		03C633948A4AE9AB4DBD95D2 /* Pods-Todoey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoey.release.xcconfig"; path = "Pods/Target Support Files/Pods-Todoey/Pods-Todoey.release.xcconfig"; sourceTree = "<group>"; };
 		1853B66622130F2100246D2C /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		18B96C22221C6EB8008268C9 /* BoulderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoulderViewController.swift; sourceTree = "<group>"; };
 		18FC9D522218753D0086DB2E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		18FC9D54221875530086DB2E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		18FD6A06220DE6B700865760 /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +62,7 @@
 			children = (
 				1853B66622130F2100246D2C /* CategoryViewController.swift */,
 				18FD6A0B220DE6B700865760 /* TodoListViewController.swift */,
+				18B96C22221C6EB8008268C9 /* BoulderViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			files = (
 				18FC9D532218753D0086DB2E /* Item.swift in Sources */,
 				1853B66722130F2100246D2C /* CategoryViewController.swift in Sources */,
+				18B96C23221C6EB8008268C9 /* BoulderViewController.swift in Sources */,
 				18FD6A0C220DE6B700865760 /* TodoListViewController.swift in Sources */,
 				18FD6A0A220DE6B700865760 /* AppDelegate.swift in Sources */,
 				18FC9D55221875530086DB2E /* Category.swift in Sources */,
