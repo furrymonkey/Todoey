@@ -11,13 +11,11 @@ import RealmSwift
 
 class CategoryViewController: UITableViewController {
     
-    let realm = try! Realm()
+    lazy var realm = try! Realm()
     
     var categoryArray: Results<Category>?
     
-    //Reference to context to be used for CRUD in NSPersistentContainer
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+    //Reference to context to be used for CRUD in NSPersistentContainer    
     override func viewDidLoad() {
         super.viewDidLoad()
         

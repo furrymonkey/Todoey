@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import CoreData
 import RealmSwift
 
 class TodoListViewController: UITableViewController{
     
     let realm = try! Realm()
     
-    var itemArray : Results<Item>?
+    var boulderProblems : Results<Item>?
     
     var selectedCategory : Category?{
         didSet{
@@ -35,14 +34,14 @@ class TodoListViewController: UITableViewController{
     
     //Declare number of rows in section
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemArray?.count ?? 1
+        return boulderProblems?.count ?? 1
     }
     
     //Declare cellForRowAt
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
         
-        if let item = itemArray?[indexPath.row]{
+        if let item = boulderProblems?[indexPath.row]{
             cell.textLabel?.text = item.title
         }
         
@@ -54,7 +53,7 @@ class TodoListViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Checkmark validation when reusing cells in tableview
         
-        if let item = itemArray?[indexPath.row]{
+        if let item = boulderProblems?[indexPath.row]{
             do{
                 try realm.write {
                     item.done = !item.done
@@ -84,6 +83,7 @@ class TodoListViewController: UITableViewController{
                     try self.realm.write {
                         let newItem = Item()
                         newItem.title = textField.text!
+                        newItem.dateCreated = Date()
                         currentCategory.items.append(newItem)
                     }
                 } catch {
@@ -113,7 +113,7 @@ class TodoListViewController: UITableViewController{
     
     func loadItems() {
         
-        itemArray = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
+        boulderProblems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
         
         tableView.reloadData()
     }
@@ -125,7 +125,7 @@ class TodoListViewController: UITableViewController{
 extension TodoListViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 
-        itemArray = itemArray?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "title", ascending: true)
+        boulderProblems = boulderProblems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
         tableView.reloadData()
     }
 
