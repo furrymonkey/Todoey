@@ -12,24 +12,16 @@ import SceneKit
 
 
 class BoulderViewController: UIViewController {
-    
+    let utopia = BoulderProblems()
+    lazy var materialsArray: Array = [utopia.utopiaNoProblems, utopia.utopiaTraverse]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         //create a new scene
         let scene = SCNScene(named: "boulder.scnassets/Utopia.scn")!
         let material = SCNMaterial()
         
-        material.diffuse.contents = UIImage(named: "boulder.scnassets/Utopia_diffuse.png")
-        material.normal.contents = UIImage(named: "boulder.scnassets/Utopia_normal_map.png")
-        
-        //material.diffuse.contents = UIColor.red
+        material.diffuse.contents = UIImage(named: materialsArray[0])
         
         let boulder = scene.rootNode.childNode(withName: "utopia", recursively: true)
         
@@ -113,7 +105,7 @@ class BoulderViewController: UIViewController {
                 SCNTransaction.commit()
                 
             }
-            material.diffuse.contents = UIImage(named: "problems.scnassets/utopiaTraverse_diffuse.png")
+            material.diffuse.contents = UIImage(named: utopia.utopiaTraverse)
             
             //material.emission.contents = UIColor.red
             

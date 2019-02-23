@@ -9,8 +9,8 @@
 import Foundation
 import RealmSwift
 
-class Category: Object {
+class Boulder: Object {
     @objc dynamic var name : String = ""
     
-    let items = List<Item>()
+    let problems = List<Problems>()
 }

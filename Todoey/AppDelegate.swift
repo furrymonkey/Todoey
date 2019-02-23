@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             migrationBlock: { migration, oldSchemaVersion in
                 
                 if oldSchemaVersion < 1 {
-                    migration.enumerateObjects(ofType: Item.className()) { oldObject, newObject in
+                    migration.enumerateObjects(ofType: Problems.className()) { oldObject, newObject in
                         newObject?["dateCreated"] = Date()
                     }
                 }

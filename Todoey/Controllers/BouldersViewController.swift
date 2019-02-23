@@ -13,7 +13,7 @@ class CategoryViewController: UITableViewController {
     
     lazy var realm = try! Realm()
     
-    var categoryArray: Results<Category>?
+    var categoryArray: Results<Boulder>?
     
     //Reference to context to be used for CRUD in NSPersistentContainer    
     override func viewDidLoad() {
@@ -42,6 +42,7 @@ class CategoryViewController: UITableViewController {
     //MARK: - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "goToItems", sender: self)
+        print("Cell was clicked")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,7 +55,7 @@ class CategoryViewController: UITableViewController {
     
     //MARK: - TableView Manipulation Methods
     
-    func saveCategories(category: Category) {
+    func saveCategories(category: Boulder) {
         
         do{
             try realm.write {
@@ -70,7 +71,7 @@ class CategoryViewController: UITableViewController {
     
     func loadCategories(){
         
-        categoryArray = realm.objects(Category.self)
+        categoryArray = realm.objects(Boulder.self)
         
         tableView.reloadData()
     }
@@ -85,7 +86,7 @@ class CategoryViewController: UITableViewController {
         
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             
-            let newCategory = Category()
+            let newCategory = Boulder()
             newCategory.name = textField.text!
             
             self.saveCategories(category: newCategory)

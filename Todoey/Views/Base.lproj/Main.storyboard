@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Todoey-->
+        <!--BoulderGuide-->
         <scene sceneID="2BH-TR-e8y">
             <objects>
-                <tableViewController id="EdN-fb-H4w" customClass="CategoryViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="EdN-fb-H4w" customClass="CategoryViewController" customModule="BoulderGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Oqb-Ou-LZ8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,7 +33,7 @@
                             <outlet property="delegate" destination="EdN-fb-H4w" id="0Gv-ef-Epp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todoey" id="yk6-eZ-WaH">
+                    <navigationItem key="navigationItem" title="BoulderGuide" id="yk6-eZ-WaH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5Bk-Ae-7Ef">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="1794" y="134"/>
         </scene>
-        <!--Items-->
+        <!--Problems-->
         <scene sceneID="hIq-w6-0Ka">
             <objects>
-                <tableViewController id="hyY-fz-n0f" customClass="TodoListViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="hyY-fz-n0f" customClass="TodoListViewController" customModule="BoulderGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="N4a-Yn-4S4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,7 +74,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="9fg-E4-BZZ" kind="show" id="67P-jh-b4Q"/>
+                                    <segue destination="9fg-E4-BZZ" kind="show" identifier="goToBoulders" id="67P-jh-b4Q"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -83,7 +83,7 @@
                             <outlet property="delegate" destination="hyY-fz-n0f" id="eVI-x9-GOW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Items" id="tVP-Qs-mZ9">
+                    <navigationItem key="navigationItem" title="Problems" id="tVP-Qs-mZ9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="MYD-pb-QUA">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -99,7 +99,7 @@
         <!--Boulder View Controller-->
         <scene sceneID="Dd8-hx-696">
             <objects>
-                <viewController id="9fg-E4-BZZ" customClass="BoulderViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9fg-E4-BZZ" customClass="BoulderViewController" customModule="BoulderGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d8a-jo-I2m" customClass="SCNView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

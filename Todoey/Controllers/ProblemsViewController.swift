@@ -13,9 +13,9 @@ class TodoListViewController: UITableViewController{
     
     let realm = try! Realm()
     
-    var boulderProblems : Results<Item>?
+    var boulderProblems : Results<Problems>?
     
-    var selectedCategory : Category?{
+    var selectedCategory : Boulder?{
         didSet{
             loadItems()
         }
@@ -81,10 +81,10 @@ class TodoListViewController: UITableViewController{
             if let currentCategory = self.selectedCategory {
                 do {
                     try self.realm.write {
-                        let newItem = Item()
+                        let newItem = Problems()
                         newItem.title = textField.text!
                         newItem.dateCreated = Date()
-                        currentCategory.items.append(newItem)
+                        currentCategory.problems.append(newItem)
                     }
                 } catch {
                     print("Error saving new items, \(error)")
@@ -113,7 +113,7 @@ class TodoListViewController: UITableViewController{
     
     func loadItems() {
         
-        boulderProblems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
+        boulderProblems = selectedCategory?.problems.sorted(byKeyPath: "title", ascending: true)
         
         tableView.reloadData()
     }

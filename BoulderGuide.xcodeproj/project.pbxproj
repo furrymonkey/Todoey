@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1853B66722130F2100246D2C /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853B66622130F2100246D2C /* CategoryViewController.swift */; };
+		1853B66722130F2100246D2C /* BouldersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853B66622130F2100246D2C /* BouldersViewController.swift */; };
 		1888549622204FD300C67B82 /* boulder.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 1888549522204FD300C67B82 /* boulder.scnassets */; };
 		18885498222051AB00C67B82 /* problems.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 18885497222051AB00C67B82 /* problems.scnassets */; };
 		18B96C23221C6EB8008268C9 /* BoulderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B96C22221C6EB8008268C9 /* BoulderViewController.swift */; };
-		18FC9D532218753D0086DB2E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC9D522218753D0086DB2E /* Item.swift */; };
-		18FC9D55221875530086DB2E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC9D54221875530086DB2E /* Category.swift */; };
+		18EADC8F2221B8760068D3B8 /* BoulderProblems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EADC8E2221B8760068D3B8 /* BoulderProblems.swift */; };
+		18FC9D532218753D0086DB2E /* Problems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC9D522218753D0086DB2E /* Problems.swift */; };
+		18FC9D55221875530086DB2E /* Boulder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC9D54221875530086DB2E /* Boulder.swift */; };
 		18FD6A0A220DE6B700865760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FD6A09220DE6B700865760 /* AppDelegate.swift */; };
-		18FD6A0C220DE6B700865760 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FD6A0B220DE6B700865760 /* TodoListViewController.swift */; };
+		18FD6A0C220DE6B700865760 /* ProblemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FD6A0B220DE6B700865760 /* ProblemsViewController.swift */; };
 		18FD6A0F220DE6B700865760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FD6A0D220DE6B700865760 /* Main.storyboard */; };
 		18FD6A11220DE6B800865760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18FD6A10220DE6B800865760 /* Assets.xcassets */; };
 		18FD6A14220DE6B800865760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FD6A12220DE6B800865760 /* LaunchScreen.storyboard */; };
@@ -23,15 +24,16 @@
 
 /* Begin PBXFileReference section */
 		03C633948A4AE9AB4DBD95D2 /* Pods-Todoey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoey.release.xcconfig"; path = "Pods/Target Support Files/Pods-Todoey/Pods-Todoey.release.xcconfig"; sourceTree = "<group>"; };
-		1853B66622130F2100246D2C /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		1853B66622130F2100246D2C /* BouldersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouldersViewController.swift; sourceTree = "<group>"; };
 		1888549522204FD300C67B82 /* boulder.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = boulder.scnassets; sourceTree = "<group>"; };
 		18885497222051AB00C67B82 /* problems.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = problems.scnassets; sourceTree = "<group>"; };
 		18B96C22221C6EB8008268C9 /* BoulderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoulderViewController.swift; sourceTree = "<group>"; };
-		18FC9D522218753D0086DB2E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		18FC9D54221875530086DB2E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		18FD6A06220DE6B700865760 /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18EADC8E2221B8760068D3B8 /* BoulderProblems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoulderProblems.swift; sourceTree = "<group>"; };
+		18FC9D522218753D0086DB2E /* Problems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problems.swift; sourceTree = "<group>"; };
+		18FC9D54221875530086DB2E /* Boulder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boulder.swift; sourceTree = "<group>"; };
+		18FD6A06220DE6B700865760 /* BoulderGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoulderGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FD6A09220DE6B700865760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18FD6A0B220DE6B700865760 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
+		18FD6A0B220DE6B700865760 /* ProblemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemsViewController.swift; sourceTree = "<group>"; };
 		18FD6A0E220DE6B700865760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18FD6A10220DE6B800865760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18FD6A13220DE6B800865760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,8 +57,9 @@
 		18D32FCB220F237600B4F973 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				18FC9D522218753D0086DB2E /* Item.swift */,
-				18FC9D54221875530086DB2E /* Category.swift */,
+				18FC9D522218753D0086DB2E /* Problems.swift */,
+				18FC9D54221875530086DB2E /* Boulder.swift */,
+				18EADC8E2221B8760068D3B8 /* BoulderProblems.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -64,8 +67,8 @@
 		18D32FCC220F23A300B4F973 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1853B66622130F2100246D2C /* CategoryViewController.swift */,
-				18FD6A0B220DE6B700865760 /* TodoListViewController.swift */,
+				1853B66622130F2100246D2C /* BouldersViewController.swift */,
+				18FD6A0B220DE6B700865760 /* ProblemsViewController.swift */,
 				18B96C22221C6EB8008268C9 /* BoulderViewController.swift */,
 			);
 			path = Controllers;
@@ -103,7 +106,7 @@
 		18FD6A07220DE6B700865760 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18FD6A06220DE6B700865760 /* Todoey.app */,
+				18FD6A06220DE6B700865760 /* BoulderGuide.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,9 +144,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		18FD6A05220DE6B700865760 /* Todoey */ = {
+		18FD6A05220DE6B700865760 /* BoulderGuide */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18FD6A18220DE6B800865760 /* Build configuration list for PBXNativeTarget "Todoey" */;
+			buildConfigurationList = 18FD6A18220DE6B800865760 /* Build configuration list for PBXNativeTarget "BoulderGuide" */;
 			buildPhases = (
 				D69E73C6B0B0EBA7718D9B1D /* [CP] Check Pods Manifest.lock */,
 				18FD6A02220DE6B700865760 /* Sources */,
@@ -155,9 +158,9 @@
 			);
 			dependencies = (
 			);
-			name = Todoey;
+			name = BoulderGuide;
 			productName = Todoey;
-			productReference = 18FD6A06220DE6B700865760 /* Todoey.app */;
+			productReference = 18FD6A06220DE6B700865760 /* BoulderGuide.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -175,7 +178,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 18FD6A01220DE6B700865760 /* Build configuration list for PBXProject "Todoey" */;
+			buildConfigurationList = 18FD6A01220DE6B700865760 /* Build configuration list for PBXProject "BoulderGuide" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -188,7 +191,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				18FD6A05220DE6B700865760 /* Todoey */,
+				18FD6A05220DE6B700865760 /* BoulderGuide */,
 			);
 		};
 /* End PBXProject section */
@@ -262,12 +265,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18FC9D532218753D0086DB2E /* Item.swift in Sources */,
-				1853B66722130F2100246D2C /* CategoryViewController.swift in Sources */,
+				18FC9D532218753D0086DB2E /* Problems.swift in Sources */,
+				18EADC8F2221B8760068D3B8 /* BoulderProblems.swift in Sources */,
+				1853B66722130F2100246D2C /* BouldersViewController.swift in Sources */,
 				18B96C23221C6EB8008268C9 /* BoulderViewController.swift in Sources */,
-				18FD6A0C220DE6B700865760 /* TodoListViewController.swift in Sources */,
+				18FD6A0C220DE6B700865760 /* ProblemsViewController.swift in Sources */,
 				18FD6A0A220DE6B700865760 /* AppDelegate.swift in Sources */,
-				18FC9D55221875530086DB2E /* Category.swift in Sources */,
+				18FC9D55221875530086DB2E /* Boulder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +425,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jak.Todoey;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jak.BoulderGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -440,7 +444,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jak.Todoey;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jak.BoulderGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -450,7 +454,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		18FD6A01220DE6B700865760 /* Build configuration list for PBXProject "Todoey" */ = {
+		18FD6A01220DE6B700865760 /* Build configuration list for PBXProject "BoulderGuide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18FD6A16220DE6B800865760 /* Debug */,
@@ -459,7 +463,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18FD6A18220DE6B800865760 /* Build configuration list for PBXNativeTarget "Todoey" */ = {
+		18FD6A18220DE6B800865760 /* Build configuration list for PBXNativeTarget "BoulderGuide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18FD6A19220DE6B800865760 /* Debug */,

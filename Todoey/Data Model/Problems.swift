@@ -9,10 +9,10 @@
 import Foundation
 import RealmSwift
 
-class Item: Object {
+class Problems: Object {
     @objc dynamic var title : String = ""
     @objc dynamic var done : Bool = false
     @objc dynamic var dateCreated : Date?
     
-    var parentCategory = LinkingObjects(fromType: Category.self, property: "items")
+    var parentCategory = LinkingObjects(fromType: Boulder.self, property: "problems")
 }
