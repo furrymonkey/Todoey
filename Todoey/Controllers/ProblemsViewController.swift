@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class TodoListViewController: UITableViewController{
+class ProblemsViewController: UITableViewController{
     
     let realm = try! Realm()
     
@@ -53,6 +53,8 @@ class TodoListViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Checkmark validation when reusing cells in tableview
         
+         performSegue(withIdentifier: "goToBoulder", sender: self)
+        
         if let item = boulderProblems?[indexPath.row]{
             do{
                 try realm.write {
@@ -66,6 +68,20 @@ class TodoListViewController: UITableViewController{
         tableView.reloadData()
         
         tableView.deselectRow(at: indexPath, animated: true)
+        print("Cell was clicked")
+        
+        print(indexPath.row)
+
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //let destinationVC = segue.destination as! BoulderViewController
+        if(segue.identifier == "goToBoulder"){
+            var selectedRow = self.tableView.indexPathForSelectedRow
+            var moveVC: BoulderViewController = segue.destination as! BoulderViewController
+            moveVC.cellID = selectedRow!.row
+        }
         
     }
     
@@ -122,7 +138,7 @@ class TodoListViewController: UITableViewController{
 
 //MARK: - Search bar methods
 
-extension TodoListViewController: UISearchBarDelegate{
+extension ProblemsViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 
         boulderProblems = boulderProblems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)

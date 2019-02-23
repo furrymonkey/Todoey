@@ -9,19 +9,21 @@
 import UIKit
 import QuartzCore
 import SceneKit
+import RealmSwift
 
 
 class BoulderViewController: UIViewController {
+    var cellID: Int? 
     let utopia = BoulderProblems()
     lazy var materialsArray: Array = [utopia.utopiaNoProblems, utopia.utopiaTraverse]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("Move ID = \(cellID!)")
         //create a new scene
         let scene = SCNScene(named: "boulder.scnassets/Utopia.scn")!
         let material = SCNMaterial()
         
-        material.diffuse.contents = UIImage(named: materialsArray[0])
+        material.diffuse.contents = UIImage(named: materialsArray[cellID!])
         
         let boulder = scene.rootNode.childNode(withName: "utopia", recursively: true)
         
