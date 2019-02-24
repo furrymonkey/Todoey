@@ -13,6 +13,8 @@ class ProblemsViewController: UITableViewController{
     
     let realm = try! Realm()
     
+    var problems: Array = ["Utopia No Problems", "Utopia Traverse V5", "The Crack V3"]
+    
     var boulderProblems : Results<Problems>?
     
     var selectedCategory : Boulder?{
@@ -20,8 +22,6 @@ class ProblemsViewController: UITableViewController{
             loadItems()
         }
     }
-    
-    //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,8 +71,6 @@ class ProblemsViewController: UITableViewController{
         print("Cell was clicked")
         
         print(indexPath.row)
-
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -108,7 +106,7 @@ class ProblemsViewController: UITableViewController{
             }
             
             self.tableView.reloadData()
-            
+
         }
         
         alert.addTextField { (alertTextField) in
@@ -129,7 +127,10 @@ class ProblemsViewController: UITableViewController{
     
     func loadItems() {
         
-        boulderProblems = selectedCategory?.problems.sorted(byKeyPath: "title", ascending: true)
+//        boulderProblems = selectedCategory?.problems.sorted(byKeyPath: "title", ascending: true)
+        //boulderProblems = selectedCategory?.problems.sorted(byKeyPath: "title", ascending: true)
+        
+        boulderProblems = selectedCategory?.problems.sorted(byKeyPath: "title")
         
         tableView.reloadData()
     }
@@ -141,7 +142,9 @@ class ProblemsViewController: UITableViewController{
 extension ProblemsViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 
-        boulderProblems = boulderProblems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
+//        boulderProblems = boulderProblems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
+        boulderProblems = boulderProblems?.filter("title CONTAINS[cd] %@", searchBar.text!)
+        
         tableView.reloadData()
     }
 

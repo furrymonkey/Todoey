@@ -18,7 +18,6 @@ class BouldersViewController: UITableViewController {
     //Reference to context to be used for CRUD in NSPersistentContainer    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadCategories()
     }
     

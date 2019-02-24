@@ -15,7 +15,7 @@ import RealmSwift
 class BoulderViewController: UIViewController {
     var cellID: Int? 
     let utopia = BoulderProblems()
-    lazy var materialsArray: Array = [utopia.utopiaNoProblems, utopia.utopiaTraverse]
+    lazy var materialsArray: Array = [utopia.utopiaNoProblems, utopia.utopiaTraverse, utopia.problemSeven, utopia.theCrack, utopia.theFlake, utopia.theGroove, utopia.thePebble, utopia.utopiaCentral, utopia.utopiaLeftHand, utopia.utopiaRightHand]
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Move ID = \(cellID!)")
@@ -23,7 +23,11 @@ class BoulderViewController: UIViewController {
         let scene = SCNScene(named: "boulder.scnassets/Utopia.scn")!
         let material = SCNMaterial()
         
+        
         material.diffuse.contents = UIImage(named: materialsArray[cellID!])
+        
+        
+        
         
         let boulder = scene.rootNode.childNode(withName: "utopia", recursively: true)
         
