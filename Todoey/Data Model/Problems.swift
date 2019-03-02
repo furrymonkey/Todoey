@@ -9,19 +9,19 @@
 import Foundation
 import RealmSwift
 
-protocol PrimaryKeyAware {
-    var id: Int { get }
-    static func primaryKey() -> String?
-}
+//protocol PrimaryKeyAware {
+//    var id: Int { get }
+//    static func primaryKey() -> String?
+//}
 
 class Problems: Object {
     @objc dynamic var title : String = ""
     @objc dynamic var done : Bool = false
-    @objc dynamic var problemsID: Int = 2
+    @objc dynamic var problemsID: Int = 0
     
-    override static func primaryKey() -> String? {
-        return "problemsID"
-    }
+//    override static func primaryKey() -> String? {
+//        return "problemsID"
+//    }
     
     var parentCategory = LinkingObjects(fromType: Boulder.self, property: "problems")
 }

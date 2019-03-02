@@ -59,6 +59,7 @@ class ProblemsViewController: UITableViewController{
             do{
                 try realm.write {
                     item.done = !item.done
+                    print("ProblemID: \(item.problemsID)")
                 }
             }catch{
                 print("Error saving done status: \(error)")
@@ -76,12 +77,13 @@ class ProblemsViewController: UITableViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //let destinationVC = segue.destination as! BoulderViewController
         if(segue.identifier == "goToBoulder"){
-//            var selectedRow = self.tableView.indexPathForSelectedRow
+            var selectedRow = self.tableView.indexPathForSelectedRow
             var moveVC: BoulderViewController = segue.destination as! BoulderViewController
-            //moveVC.cellID = selectedRow!.row
-            moveVC.cellID = self.realm.objects(Problems.self).map{$0.problemsID}.max() ?? 0
+            var myvalue = realm.objects(Problems.self).map{$0.problemsID}
+            print(myvalue)
+            moveVC.cellID = selectedRow!.row
+            
         }
-        
     }
     
     //MARK - Add new items
@@ -89,18 +91,12 @@ class ProblemsViewController: UITableViewController{
         var textField = UITextField()
         
         let alert = UIAlertController(title: "Add New Todoey Item", message: "", preferredStyle: .alert)
-        
 
-        
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             //what will happen once the user clicks the Add Item button on our UIAlert
 
-            
-
             if let currentCategory = self.selectedCategory {
-//                var myvalue = self.realm.objects(Problems.self).map{$0.problemsID}.max() ?? 0
-//                myvalue += 1
-//                print("MYVALUE = \(myvalue)")
+                
                 do {
                     try self.realm.write {
                         let newItem = Problems()

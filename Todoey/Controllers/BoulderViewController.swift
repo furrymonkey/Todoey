@@ -13,7 +13,8 @@ import RealmSwift
 
 
 class BoulderViewController: UIViewController {
-    var cellID: Int? 
+    var cellID: Int?
+    
     let utopia = BoulderProblems()
     lazy var materialsArray: Array = [utopia.utopiaNoProblems, utopia.utopiaTraverse, utopia.problemSeven, utopia.theCrack, utopia.theFlake, utopia.theGroove, utopia.thePebble, utopia.utopiaCentral, utopia.utopiaLeftHand, utopia.utopiaRightHand]
     override func viewDidLoad() {
