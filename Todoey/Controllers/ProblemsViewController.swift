@@ -12,8 +12,8 @@ import RealmSwift
 class ProblemsViewController: UITableViewController{
     
     let realm = try! Realm()
-   
-    //var problems: Array = ["Utopia No Problems", "Utopia Traverse V5", "The Crack V3"]
+    
+    var indexID: Int = 0
     
     var boulderProblems : Results<Problems>?
     
@@ -54,12 +54,12 @@ class ProblemsViewController: UITableViewController{
         //Checkmark validation when reusing cells in tableview
         
          performSegue(withIdentifier: "goToBoulder", sender: self)
-        
+        let indexId = boulderProblems?[indexPath.row]
         if let item = boulderProblems?[indexPath.row]{
             do{
                 try realm.write {
                     item.done = !item.done
-                    print("ProblemID: \(item.problemsID)")
+                    print(indexPath.row)
                 }
             }catch{
                 print("Error saving done status: \(error)")
@@ -69,21 +69,29 @@ class ProblemsViewController: UITableViewController{
         tableView.reloadData()
         
         tableView.deselectRow(at: indexPath, animated: true)
-        print("Cell was clicked")
         
-        print(indexPath.row)
+        let newIndex = indexId?.problemsID
+        print("ProblemID: \(String(describing: newIndex))")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //let destinationVC = segue.destination as! BoulderViewController
         if(segue.identifier == "goToBoulder"){
+            //var index = boulderProblems?.index(of: Results<Problems>)
+            
             var selectedRow = self.tableView.indexPathForSelectedRow
             var moveVC: BoulderViewController = segue.destination as! BoulderViewController
             var myvalue = realm.objects(Problems.self).map{$0.problemsID}
-            print(myvalue)
-            moveVC.cellID = selectedRow!.row
             
+            print(myvalue)
+            //moveVC.cellID = selectedRow!.row
+            moveVC.cellID = getProblemsID(indexPath: selectedRow!)
         }
+    }
+    
+    func getProblemsID(indexPath: IndexPath) -> Int{
+        let index = boulderProblems?[indexPath.row]
+        return index?.problemsID ?? 0
     }
     
     //MARK - Add new items
