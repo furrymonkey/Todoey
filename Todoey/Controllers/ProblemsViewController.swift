@@ -12,8 +12,8 @@ import RealmSwift
 class ProblemsViewController: UITableViewController{
     
     let realm = try! Realm()
-    
-    var problems: Array = ["Utopia No Problems", "Utopia Traverse V5", "The Crack V3"]
+   
+    //var problems: Array = ["Utopia No Problems", "Utopia Traverse V5", "The Crack V3"]
     
     var boulderProblems : Results<Problems>?
     
@@ -76,9 +76,10 @@ class ProblemsViewController: UITableViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //let destinationVC = segue.destination as! BoulderViewController
         if(segue.identifier == "goToBoulder"){
-            var selectedRow = self.tableView.indexPathForSelectedRow
+//            var selectedRow = self.tableView.indexPathForSelectedRow
             var moveVC: BoulderViewController = segue.destination as! BoulderViewController
-            moveVC.cellID = selectedRow!.row
+            //moveVC.cellID = selectedRow!.row
+            moveVC.cellID = self.realm.objects(Problems.self).map{$0.problemsID}.max() ?? 0
         }
         
     }
@@ -89,15 +90,21 @@ class ProblemsViewController: UITableViewController{
         
         let alert = UIAlertController(title: "Add New Todoey Item", message: "", preferredStyle: .alert)
         
+
+        
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             //what will happen once the user clicks the Add Item button on our UIAlert
+
             
+
             if let currentCategory = self.selectedCategory {
+//                var myvalue = self.realm.objects(Problems.self).map{$0.problemsID}.max() ?? 0
+//                myvalue += 1
+//                print("MYVALUE = \(myvalue)")
                 do {
                     try self.realm.write {
                         let newItem = Problems()
                         newItem.title = textField.text!
-                        newItem.dateCreated = Date()
                         currentCategory.problems.append(newItem)
                     }
                 } catch {
@@ -126,14 +133,17 @@ class ProblemsViewController: UITableViewController{
 
     
     func loadItems() {
-        
-//        boulderProblems = selectedCategory?.problems.sorted(byKeyPath: "title", ascending: true)
-        //boulderProblems = selectedCategory?.problems.sorted(byKeyPath: "title", ascending: true)
-        
-        boulderProblems = selectedCategory?.problems.sorted(byKeyPath: "title")
+
+        boulderProblems = selectedCategory?.problems.sorted(byKeyPath: "problemsID")
         
         tableView.reloadData()
     }
+    
+//    func nextId() -> Int
+//    {
+//        return (realm.objects(Problems.self).map{$0.problemsID}.max() ?? 0) + 1
+//
+//    }
     
 }
 

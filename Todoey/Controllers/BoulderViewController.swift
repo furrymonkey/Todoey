@@ -25,10 +25,7 @@ class BoulderViewController: UIViewController {
         
         
         material.diffuse.contents = UIImage(named: materialsArray[cellID!])
-        
-        
-        
-        
+
         let boulder = scene.rootNode.childNode(withName: "utopia", recursively: true)
         
         boulder?.geometry?.materials = [material]
